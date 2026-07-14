@@ -1,3 +1,5 @@
 import "./styles/styles.css";
 
-console.log("Hello World!");
+import { setupUI } from "./ui.js";
+
+setupUI();

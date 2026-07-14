@@ -3,10 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>odin template</title>
+    <title>odin whe</title>
   </head>
 
   <body>
-    <p>Hello World</p>
+    <header id="header">
+      <h1>Odin Weather App</h1>
+      <form id="search-form">
+        <input type="text" id="city" name="city" required />
+
+        <button type="submit">Search</button>
+      </form>
+
+      <button type="button" id="toggle-unit">°F</button>
+    </header>
+
+    <main id="container">
+      <p>Please, search for a city to receive it's weather informations.</p>
+    </main>
   </body>
 </html>

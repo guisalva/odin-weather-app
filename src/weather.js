@@ -12,6 +12,7 @@ export async function getWeatherData(city) {
     }
 
     const data = await response.json();
+    console.log(data);
 
     return {
       city: data.resolvedAddress,
