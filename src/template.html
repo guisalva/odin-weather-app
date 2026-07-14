@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>odin whe</title>
+    <title>odin weather app</title>
   </head>
 
   <body>
     <header id="header">
       <h1>Odin Weather App</h1>
+
       <form id="search-form">
-        <input type="text" id="city" name="city" required />
+        <input
+          type="text"
+          id="city"
+          name="city"
+          placeholder="Enter a city name..."
+          required
+        />
 
         <button type="submit">Search</button>
       </form>
@@ -19,7 +26,13 @@
     </header>
 
     <main id="container">
-      <p>Please, search for a city to receive it's weather informations.</p>
+      <p class="introduction">
+        Please, search for a city to receive it's weather informations.
+      </p>
     </main>
+
+    <div class="loading hidden">
+      <p>Loading...</p>
+    </div>
   </body>
 </html>

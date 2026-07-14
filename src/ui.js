@@ -11,22 +11,28 @@ export function setupUI() {
   const toggleButton = document.querySelector("#toggle-unit");
 
   searchForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    try {
+      e.preventDefault();
 
-    const searchValue = cityInput.value.trim();
+      const searchValue = cityInput.value.trim();
 
-    if (!searchValue) return;
+      if (!searchValue) return;
 
-    const weatherInfo = await getWeatherData(searchValue);
+      showLoading();
 
-    if (!weatherInfo) {
-      window.alert("Not found");
-      return;
+      const weatherInfo = await getWeatherData(searchValue);
+
+      if (!weatherInfo) {
+        window.alert("Not found");
+        return;
+      }
+
+      currentWeather = weatherInfo;
+
+      renderWeather(weatherInfo);
+    } finally {
+      hideLoading();
     }
-
-    currentWeather = weatherInfo;
-
-    renderWeather(weatherInfo);
   });
 
   toggleButton.addEventListener("click", () => {
@@ -128,4 +134,14 @@ function createCardBody(info) {
   );
 
   return cardBody;
+}
+
+function showLoading() {
+  const loading = document.querySelector(".loading");
+  loading.classList.remove("hidden");
+}
+
+function hideLoading() {
+  const loading = document.querySelector(".loading");
+  loading.classList.add("hidden");
 }

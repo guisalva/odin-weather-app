@@ -1,3 +1,104 @@
-p {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 200px;
+  padding: 16px;
+
+  & h1 {
+    text-transform: uppercase;
+    min-width: max-content;
+  }
+
+  & form {
+    display: inline-flex;
+    gap: 5px;
+    width: 100%;
+
+    & > input {
+      width: 100%;
+      padding: 4px 8px;
+      font-size: 14px;
+    }
+
+    & > button {
+      padding: 4px 12px;
+    }
+  }
+
+  & #toggle-unit {
+    padding: 6px 20px;
+  }
+}
+
+#container {
+  width: 720px;
+  margin: auto;
+
+  & .introduction {
+    text-align: center;
+  }
+}
+
+.card {
+  padding: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > h2 {
+    text-transform: capitalize;
+    font-size: 32px;
+  }
+}
+
+.card-body {
+  display: grid;
+  gap: 10px;
+}
+
+.loading {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: #000000d5;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > p {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
+.hidden {
+  position: initial;
+  display: none;
 }
